@@ -35,8 +35,11 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     @Override
     public void onBindViewHolder(final BookViewHolder holder, int position) {
         holder.mItem = books.get(position);
+        String ranking = String.format("%d", books.get(position).rank);
+        holder.mBookRank.setText(ranking);
         holder.mBookTitle.setText(books.get(position).title);
         holder.mBookAuthor.setText(books.get(position).author);
+        holder.mBookDescription.setText(books.get(position).description);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,20 +60,24 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
 
     public class BookViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+        public final TextView mBookRank;
         public final TextView mBookTitle;
         public final TextView mBookAuthor;
+        public final TextView mBookDescription;
         public BestSellerBook mItem;
 
         public BookViewHolder(View view) {
             super(view);
             mView = view;
+            mBookRank= (TextView) view.findViewById(R.id.ranking);
             mBookTitle = (TextView) view.findViewById(R.id.book_title);
             mBookAuthor = (TextView) view.findViewById(R.id.book_author);
+            mBookDescription = (TextView) view.findViewById(R.id.book_description);
         }
 
         @Override
         public String toString() {
-            return mBookTitle.toString() + " '" + mBookAuthor.getText() + "'";
+            return mBookTitle.toString() + " '" + mBookAuthor.getText() + "'" + mBookRank.toString() + "'" + mBookDescription.getText() + "'";
         }
     }
 }

@@ -1,20 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_margin="10dp"
+    android:animateLayoutChanges="false"
+    android:background="#14C0CC"
+    android:clipToPadding="false"
+    android:fadingEdge="horizontal|vertical"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/ranking"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/book_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="-24dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold"
+        tools:text="15" />
+
+    <ImageView
+        android:id="@+id/book_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        android:padding="3dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/book_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="156dp"
+        android:paddingLeft="0dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold"
+        tools:text="Jamaica Apartment" />
 
     <TextView
         android:id="@+id/book_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+        android:layout_below="@+id/book_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="14dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold|italic"
+        tools:text="Denise Daniels" />
+
+    <TextView
+        android:id="@+id/book_description"
+        android:layout_width="403dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_author"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="16dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="Welcome to Jamaica. This book is all about jamaica and its attractions" />
+
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_description"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="7dp"
+        android:background="#A6CD4E"
+        android:text="BUY ON AMAZON"
+        android:textColor="#000000" />
+
+
+</RelativeLayout>

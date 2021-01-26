@@ -10,8 +10,9 @@
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#2A5C99"
         app:layoutManager="LinearLayoutManager"
         tools:context=".BestSellerBooksFragment"
         tools:listitem="@layout/fragment_best_seller_book" />
